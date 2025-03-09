@@ -9,6 +9,15 @@ use Illuminate\Http\Request;
 
 class ArticleController extends Controller
 {
+    /**
+     * @OA\Get(
+     *     path="/api/articles",
+     *     summary="Fetch all articles",
+     *     tags={"Articles"},
+     *     @OA\Response(response=200, description="List of articles"),
+     *     @OA\Response(response=401, description="Unauthorized")
+     * )
+     */
     protected $articleRepository;
 
     public function __construct(ArticleRepositoryInterface $articleRepository)
